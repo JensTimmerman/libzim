@@ -196,7 +196,7 @@ offset_t readOffset(const Reader& reader, size_t idx)
       std::tie(ns, path) = parseLongPath(url);
       return findx(ns, path);
     } catch (...) {}
-    return std::pair<bool, entry_index_t>(false, entry_index_t(0));
+    return { false, entry_index_t(0) };
   }
 
   std::pair<bool, title_index_t> FileImpl::findxByTitle(char ns, const std::string& title)
